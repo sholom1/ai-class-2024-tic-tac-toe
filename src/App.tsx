@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import NavButton from './Navbutton';
 
 function App() {
+  const [activeGame, setActiveGame] = useState<'hand-built' | 'copilot' | 'gemini'>('hand-built')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1 className='text-3xl font-bold px-4 mb-2'>Tic Tac Toe</h1>
       </header>
-    </div>
+      <body className='container'>
+        <div className='flex border-b-2 border-black px-4 gap-1'>
+          <NavButton onClick={() => setActiveGame('hand-built')}>Hand built</NavButton>
+          <NavButton onClick={() => setActiveGame('copilot')}>Copilot</NavButton>
+          <NavButton onClick={() => setActiveGame('gemini')}>Gemini</NavButton>
+        </div>
+        <div>
+          
+        </div>
+      </body>
+    </>
   );
 }
 
