@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import NavButton from './Navbutton';
+import HandBuilt from './hand-built/HandBuilt';
 
 function App() {
   const [activeGame, setActiveGame] = useState<'hand-built' | 'copilot' | 'gemini'>('hand-built')
@@ -16,7 +17,7 @@ function App() {
           <NavButton onClick={() => setActiveGame('gemini')}>Gemini</NavButton>
         </div>
         <div>
-          
+          <HandBuilt/>
         </div>
       </body>
     </>
